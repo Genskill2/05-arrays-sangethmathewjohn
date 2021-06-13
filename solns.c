@@ -1,16 +1,6 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
 
-float average(int[],int);
-int max(int[],int);
-int min(int[],int);
-int mode(int[],int);
-int factors(int,int[]);
-
-int main(void) {
-  return 0;  
-}
-
 float average(int a[],int num){
   int i;
   float sum=0;
