@@ -26,7 +26,7 @@ int min(int a[],int num){
   }
   return min;
 }
-/********---mode---*********/
+/********---Mode---*********/
 int mode(int a[],int num){
   int i,j,modenum,moden=0,mode;
   for(i=0;i<num;i++){
@@ -41,7 +41,7 @@ int mode(int a[],int num){
     }
     return(mode);
 }
-
+/*******---Factors---********/
 int factors(int num,int a[]){
   int i,j=0,acc=0,facts[50]={0};
   for(i=0;i<num;i++){
@@ -50,12 +50,12 @@ int factors(int num,int a[]){
       j++;
     }
   }
-  for(i=0;i<j;i++){
+  for(i=0;i<=j;i++){
     while(num%a[i]==0){
       num /=a[i];
       facts[acc] = a[i];
       acc++;
     }
   }
-   return(j+1);   
+   return(j+1,facts);   
 }
