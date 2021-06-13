@@ -1,6 +1,8 @@
 /* Enter your solutions in this file */
 #include <stdio.h>
+
 /********----Average----********/
+
 float average(int a[],int num){
   int i, sum=0;
   for (i=0;i<num;i++)
@@ -8,7 +10,9 @@ float average(int a[],int num){
   sum=sum/num;
   return sum;
 }
+
 /******---Maximum---******/
+
 int max(int a[],int num){
   int i,max= 0;
   for (i=0;i<num;i++){
@@ -17,7 +21,9 @@ int max(int a[],int num){
   }
   return max;
 }
+
 /******---Minimum---******/
+
 int min(int a[],int num){
   int i=0,min=a[i];
   for(i;i<num;i++){
@@ -26,7 +32,9 @@ int min(int a[],int num){
   }
   return min;
 }
+
 /********---Mode---*********/
+
 int mode(int a[],int num){
   int i,j,modenum,moden=0,mode;
   for(i=0;i<num;i++){
@@ -41,21 +49,17 @@ int mode(int a[],int num){
     }
     return(mode);
 }
+
 /*******---Factors---********/
-int factors(int num,int a[]){
-  int i,j=0,acc=0,facts[50]={0};
-  for(i=0;i<num;i++){
-    if(num%i == 0){
-      a[j] =i;
-      j++;
-    }
+
+int factors(int num,int ret[]){
+  int i,count=0;
+  for(i=2;i<=num;i++){
+      while((num%i==0) &&  (num>0)){
+        num=num/i;
+        ret[count] = i;
+        count=count+1;
+      }
   }
-  for(i=0;i<=j;i++){
-    while(num%a[i]==0){
-      num /=a[i];
-      facts[acc] = a[i];
-      acc++;
-    }
-  }
-   return(j+1,facts);   
+  return count;
 }
