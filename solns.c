@@ -7,7 +7,7 @@ float average(int a[],int num){
   int i, sum=0;
   for (i=0;i<num;i++)
       sum += a[i];
-  sum=sum/num;
+  sum/=num;
   return sum;
 }
 
@@ -41,7 +41,7 @@ int mode(int a[],int num){
     modenum =0;
     for(j=0;j<num;j++){
       if(a[i] ==a[j])
-        modenum+=1;
+        modenum++;
     }
     if(moden<modenum)
       mode =a[i];
@@ -52,14 +52,14 @@ int mode(int a[],int num){
 
 /*******---Factors---********/
 
-int factors(int num,int ret[]){
-  int i,count=0;
+int factors(int num,int a[]){
+  int i,acc=0;
   for(i=2;i<=num;i++){
-      while((num%i==0) &&  (num>0)){
+      while((num%i==0){
         num=num/i;
-        ret[count] = i;
-        count=count+1;
+        a[acc] = i;
+        acc ++;
       }
   }
-  return count;
+  return acc;
 }
